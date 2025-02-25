@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decode the Dark Pool</title>
+    <style>
+        body { 
+            background: rgba(0, 0, 0, 0.5) url('puzzle.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            text-align: center; 
+            padding: 50px; 
+            color: #4d6d1a; 
+        }
+        .puzzle { 
+            font-size: 24px; 
+            margin: 20px auto; 
+            padding: 20px; 
+            background: rgba(189, 191, 219, 0.8); 
+            color: #2b3133; 
+            max-width: 500px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+        blockquote, .highlighted {
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-left: 5px solid #106110;
+            font-style: italic;
+            max-width: 600px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            margin: 10px;
+            font-weight: bold;
+        }
+        h1, p {
+            font-weight: bold;
+        }
+        input::placeholder {
+    font-style: italic;
+}
+
+    </style>
+</head>
+<body>
+    <h1 class="highlighted">🔐 Crack the Code to Unlock the Secret!</h1>
+    <div class="puzzle"> WHO TRADE IN THE SHADOWS = ???</div>
+    <input type="text" id="answer" placeholder="think big, think hidden...">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
+
+    <script>
+        function checkAnswer() {
+    const answer = document.getElementById("answer").value.toLowerCase();
+    if (answer === "institutional investors") {
+        document.getElementById("result").innerHTML = "<span style='color: #ffffff; font-weight: bold;'>🎉<br><br>Correct!</span>";
+        document.querySelector("blockquote")?.remove();
+        const blockquote = document.createElement("blockquote");
+        blockquote.textContent = "Institutional investors trade in dark pools to keep large transactions hidden from the public market.";
+        document.body.appendChild(blockquote);
+    } else {
+        document.getElementById("result").innerHTML = "❌ Try again!";
+    }
+}
+
+    </script>
+</body>
+</html>
