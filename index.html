@@ -20,6 +20,16 @@
             border-radius: 15px;
             font-weight: bold;
         }
+        .highlighted-message {
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(201, 226, 158, 0.8);
+            color: #000000;
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 10px;
+            max-width: 300px;
+        }
         blockquote, .highlighted {
             margin: 20px auto;
             padding: 20px;
@@ -56,7 +66,7 @@
         function checkAnswer() {
             const answer = document.getElementById("answer").value.toLowerCase();
             if (answer === "institutional investors") {
-                document.getElementById("result").innerHTML = "<span style='color: #ffffff; font-weight: bold;'>🎉<br><br>Correct!</span>";
+                document.getElementById("result").innerHTML = "<div class='highlighted-message'>🎉<br>Correct!</div>";
                 document.querySelector("blockquote")?.remove();
                 const blockquote = document.createElement("blockquote");
                 blockquote.textContent = "Institutional investors trade in dark pools to keep large transactions hidden from the public market.";
